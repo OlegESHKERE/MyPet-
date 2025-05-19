@@ -1,0 +1,3 @@
+services:
+  my_pet_assistant.ai_chat_service:
+    class: Drupal\my_pet_assistant\Service\AIChatService

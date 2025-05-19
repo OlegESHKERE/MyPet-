@@ -1,0 +1,604 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ваші кастомні стилі тут */
+
+
+/* AI /* CSS */
+.chat-history {
+    background: #e5ddd5;
+    border-radius: 10px;
+    padding: 12px 8px 60px 8px;
+    min-height: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 0;
+  }
+  
+  .message-row {
+    display: flex;
+    margin-bottom: 6px;
+  }
+  
+  .user-row {
+    justify-content: flex-end;
+  }
+  
+  .ai-row {
+    justify-content: flex-start;
+  }
+  
+  .user-bubble {
+    background: #dcf8c6;
+    color: #222;
+    border-radius: 18px 18px 2px 18px;
+    padding: 8px 14px;
+    max-width: 70%;
+    font-size: 1em;
+    position: relative;
+    margin-left: 30px;
+  }
+  
+  .ai-bubble {
+    background: #fff;
+    color: #222;
+    border-radius: 18px 18px 18px 2px;
+    padding: 8px 14px;
+    max-width: 70%;
+    font-size: 1em;
+    position: relative;
+    margin-right: 30px;
+  }
+  
+  .timestamp {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 2px;
+    text-align: right;
+  }
+  
+  .input-row {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 8px 8px 8px 8px;
+    position: sticky;
+    bottom: 0;
+  }
+  
+  .chat-input {
+    flex: 1;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 8px 12px;
+    margin-right: 8px;
+  }
+  
+  .chat-send-button {
+    background: #0088cc;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 8px 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .tick {
+    color: #34b7f1;
+    font-size: 1em;
+    margin-left: 4px;
+  }
+  
+  /* header /* CSS */
+  .site-header__fixable {
+    transition: none;
+    transform: none;
+    top: 0;
+  }
+  
+  /* social-bar /* CSS */
+  .social-bar, .site-header__initial {
+    display: none!important;
+  }
+
+  /* page wrapper /* CSS */
+  .region--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  div#page-wrapper {
+    max-width: none;
+  }
+  #block-pet-theme-logoblock .field--name-field-media-image { 
+    width: 70px;
+    height: 70px;
+    margin-right: 53px;
+    padding-top: 2px;
+  }
+  .main-content {
+    max-width: none;
+    margin-right: 5px;
+  }
+  .main-content__container {
+    max-width: none;
+  }
+  .layout-main {
+    display: block;
+  }
+  
+  /* top mnu bar /* CSS */
+  .site-header__inner__container {
+    max-width: none;
+  }
+  nav#block-pet-theme-account-menu {
+    position: absolute;
+    left: auto;
+    right: 60px;
+    top: 36px;
+  }::before {
+    display: none;
+  }
+  #block-pet-theme-main-menu {
+    font-weight: 700;
+    font-size: bold;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    text-align: center;
+    vertical-align: middle;
+      } :hover { 
+        color: #2F4898;
+      }
+ #block-pet-theme-main-menu li {
+    margin-right: 40px;
+ }
+ #block-pet-theme-main-menu span {
+    padding-top: 47px;
+    padding-bottom: 47px;
+ }
+ #block-pet-theme-account-menu li{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    padding-top: 6px;
+    padding-right: 36px;
+    padding-bottom: 6px;
+    padding-left: 36px;
+    border-width: 1px;
+    border: 1px solid #2F4898
+}
+
+/* banner  /* CSS */
+#block-pet-theme-tviydrugzaslugovuenaykraschogo {
+    background-color: #DBE7F3;
+    border-radius: 50px;
+    padding: 80px 80px 53px 80px;
+}
+.layout--twocol-section--50-50 {
+    display: flex;
+    justify-content: space-around;
+.layout__region--first {
+    position: relative;
+}
+.field--name-field-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #000000;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 611px;
+}
+.field--name-field-body{
+    font-weight: 400;
+    font-size: 23.68px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: #000000;
+    max-width: 368px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.field--name-field-link {
+    padding: 14px 133px 14px 13px;
+    background: white;
+    border-radius: 12px;
+    width: fit-content;
+
+    a{
+        text-decoration: none;
+        color: #656565;
+    }
+}
+.field--name-field-cta {
+    background-color: #2F4898;
+    border-radius: 12px;
+    width: fit-content;
+    padding: 14px 20px 14px 20px;
+    position: absolute;
+    right: 28%;
+    bottom: 45.5%;
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+}
+.field--name-field-media-image .field__item img {
+    width: 544px;
+    height: 601px;
+    top: 195.03px;
+    left: 762.65px;
+ }
+}
+/* icons header block /* CSS */
+.icons-banner {
+    color: #000000;
+    border-radius: 12px;
+    padding: 28px 106px;
+    margin-top: -160px;
+}
+/*statictics block /* CSS */
+#block-pet-theme-aboutusstatictics .field--name-field-image{
+    display: flex;
+    justify-content: space-around;
+}
+/* ask ai block /* CSS */
+#block-pet-theme-askai .field--type-entity-reference {
+    display: none;
+}
+/*questions block /* CSS */
+#block-pet-theme-questionblock .question-mark-block{
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30.67px;
+    letter-spacing: 0%;
+    color: #fff;
+}
+
+/* footer /* CSS */
+.site-footer {
+    background: #fff;
+    border: unset!important;
+
+    .site-footer__inner {
+        max-width: none;
+    }
+    h2{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    text-align: center;
+    vertical-align: middle;
+    color: #2F4898!important;
+    }
+    li {
+        font-family: Almarai;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    text-align: center;
+    vertical-align: middle;
+    color: #0E2515;
+    a{
+        text-decoration: none;
+    }
+
+
+    }
+}
+#block-pet-theme-copyright {
+    max-width: none;
+    display: flex;
+    justify-content: center;
+    color: #DEDEDE;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    border-top: 1px solid #DEDEDE;
+    a{
+        text-decoration: none;
+    }
+}:hover {
+    color: inherit;
+}
+#block-pet-theme-schodennikvikhovancya {
+
+}
+
+/* 404 /* CSS */
+.field--name-field-error-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+/* view block blog /* CSS */
+.block-views-blockblog-view-block-1 {
+    display: flex;
+    justify-content: space-around;
+    .view-content {
+        display: flex
+    }
+    .views-field-field-content-picture {
+        max-width: 379px;
+    }
+    h2 {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    }
+    img {
+    width: 379px;
+    height: 405px;
+    top: 3281.23px;
+    left: 117.52px;
+    border-radius: 20px;
+    }
+}
+/* register form email /* CSS */
+/* Main block background and rounding */
+#block-pet-theme-registeremailform {
+    background: #3950a1;
+    border-radius: 18px;
+    margin: 0 auto 32px auto;
+    padding: 48px 0 64px 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Center content and set max width */
+  #block-pet-theme-registeremailform .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Main heading */
+  #block-pet-theme-registeremailform h1 {
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 48px;
+    line-height: 1.2;
+  }
+  
+  /* Email input row */
+  #block-pet-theme-registeremailform .email-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3950a1;
+    border-radius: 32px;
+    border: 2px solid #fff;
+    padding: 8px 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    gap: 0;
+  }
+  
+  /* Email input field */
+  #block-pet-theme-registeremailform .email-input input[type="email"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 16px 20px 16px 48px;
+    font-size: 1.1rem;
+    border-radius: 32px 0 0 32px;
+    background: transparent;
+    color: #fff;
+    position: relative;
+  }
+  
+  /* Placeholder color */
+  #block-pet-theme-registeremailform .email-input input::placeholder {
+    color: #fff;
+    opacity: 0.8;
+    font-size: 1.1rem;
+  }
+  
+  /* Email icon (using emoji for simplicity, replace with SVG if needed) */
+  #block-pet-theme-registeremailform .email-input input[type="email"] {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 13.5l8-6V6l-8 6-8-6v1.5l8 6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    background-position: 16px center;
+  }
+  
+  /* Register button */
+  #block-pet-theme-registeremailform .email-input button {
+    border: none;
+    background: #fff;
+    color: #3950a1;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 0 32px 32px 0;
+    padding: 16px 32px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    min-width: 170px;
+  }
+  
+  #block-pet-theme-registeremailform .email-input button:hover {
+    background: #26428b;
+    color: #fff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 700px) {
+    #block-pet-theme-registeremailform h1 {
+      font-size: 1.4rem;
+      margin-bottom: 32px;
+    }
+    #block-pet-theme-registeremailform .email-input {
+      flex-direction: column;
+      border-radius: 18px;
+      padding: 12px;
+    }
+    #block-pet-theme-registeremailform .email-input input[type="email"],
+    #block-pet-theme-registeremailform .email-input button {
+      border-radius: 12px;
+      width: 100%;
+      min-width: 0;
+      margin-bottom: 8px;
+      padding: 12px 16px 12px 44px;
+      font-size: 1rem;
+    }
+    #block-pet-theme-registeremailform .email-input button {
+      margin-bottom: 0;
+    }
+  }
+  /* our favirites block /* CSS */
+  /* Main block wrapper */
+#block-pet-theme-views-block-pet-card-view-block-1 {
+    padding: 32px 0;
+    background: #f8f9fa;
+  }
+  
+  /* Block title */
+  #block-pet-theme-views-block-pet-card-view-block-1 .block__title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+  
+  /* Grid container for cards */
+  #block-pet-theme-views-block-pet-card-view-block-1 .view-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    justify-items: stretch;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  
+  /* Each pet card */
+  #block-pet-theme-views-block-pet-card-view-block-1 article.node--type-our-pets-cards {
+    background: linear-gradient(135deg, #3950a1 70%, #4bb5ff 100%);
+    border-radius: 18px;
+    box-shadow: 0 6px 24px 0 rgba(33, 56, 120, 0.10);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px 20px 16px 20px;
+    position: relative;
+    overflow: hidden;
+    min-height: 340px;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  
+  #block-pet-theme-views-block-pet-card-view-block-1 article.node--type-our-pets-cards:hover {
+    transform: translateY(-4px) scale(1.025);
+    box-shadow: 0 12px 32px 0 rgba(33, 56, 120, 0.14);
+  }
+  
+  /* Pet name/title */
+  #block-pet-theme-views-block-pet-card-view-block-1 .node__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: left;
+  }
+  
+  #block-pet-theme-views-block-pet-card-view-block-1 .node__title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* Age badge */
+  #block-pet-theme-views-block-pet-card-view-block-1 .field--name-field-pet-age {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 4px 14px;
+    margin-bottom: 12px;
+    margin-right: 8px;
+    margin-top: 0;
+  }
+  
+  /* Description */
+  #block-pet-theme-views-block-pet-card-view-block-1 .field--name-field-pet-description {
+    font-size: 1rem;
+    color: #f2f6ff;
+    margin-bottom: 14px;
+    min-height: 48px;
+  }
+  
+  /* Pet image */
+  #block-pet-theme-views-block-pet-card-view-block-1 .field--name-field-pet-photo img {
+    width: 100%;
+    max-width: 170px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 0 0;
+    box-shadow: 0 2px 16px 0 rgba(33, 56, 120, 0.10);
+    background: #fff;
+    object-fit: contain;
+  }
+  
+  /* Place image at the bottom right for larger screens */
+  #block-pet-theme-views-block-pet-card-view-block-1 .field--name-field-pet-photo {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 900px) {
+    #block-pet-theme-views-block-pet-card-view-block-1 .view-content {
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    #block-pet-theme-views-block-pet-card-view-block-1 article.node--type-our-pets-cards {
+      min-height: 280px;
+      padding: 18px 10px 12px 10px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #block-pet-theme-views-block-pet-card-view-block-1 .view-content {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 0 4px;
+    }
+    #block-pet-theme-views-block-pet-card-view-block-1 .block__title {
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+    }
+    #block-pet-theme-views-block-pet-card-view-block-1 article.node--type-our-pets-cards {
+      min-height: 180px;
+      padding: 12px 6px 8px 6px;
+    }
+    #block-pet-theme-views-block-pet-card-view-block-1 .field--name-field-pet-photo img {
+      max-width: 120px;
+    }
+  }
+  

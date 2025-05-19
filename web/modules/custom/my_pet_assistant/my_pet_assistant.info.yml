@@ -1,0 +1,7 @@
+name: 'My Pet Assistant'
+type: module
+description: 'AI чат-бот з доступом до даних користувача'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:user

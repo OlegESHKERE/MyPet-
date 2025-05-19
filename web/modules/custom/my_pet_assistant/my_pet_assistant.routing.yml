@@ -1,0 +1,7 @@
+my_pet_assistant.chat:
+  path: '/my-pet-assistant/chat'
+  defaults:
+    _controller: '\Drupal\my_pet_assistant\Controller\ChatController::chatPage'
+    _title: 'My Pet Assistant Chat'
+  requirements:
+    _permission: 'access content'
