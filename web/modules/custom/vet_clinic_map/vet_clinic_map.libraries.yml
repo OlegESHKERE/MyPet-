@@ -1,0 +1,18 @@
+vet-clinic-map:
+  version: 1.x
+  css:
+    theme:
+      css/vet-clinic-map.css: {}
+  js:
+    js/vet-clinic-map.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+google-maps:
+  version: 1.x
+  js:
+    //maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap: { type: external, minified: true }
+  dependencies:
+    - vet_clinic_map/vet-clinic-map

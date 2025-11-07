@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/statistics-block.css"],"names":[],"mappings":"AAAA,2BAA2B;AAC3B;IACI,aAAa;IACb,6BAA6B;AACjC","file":"statistics-block.css","sourcesContent":["/*statictics block /* CSS */\r\n#block-pet-theme-aboutusstatictics .field--name-field-image{\r\n    display: flex;\r\n    justify-content: space-around;\r\n}"]}

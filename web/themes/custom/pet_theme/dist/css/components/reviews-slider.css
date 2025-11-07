@@ -1,0 +1,161 @@
+/* Reviews Slider Specific Styles */
+.view-revies-slider {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.view-revies-slider .view-content {
+  position: relative;
+}
+
+/* Reviews Slider Items */
+.view-revies-slider .slick__slide {
+  padding: 20px;
+  text-align: center;
+}
+
+.view-revies-slider .paragraph--type--review-comment {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 0 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide field labels in reviews */
+.view-revies-slider .field__label {
+  display: none;
+}
+
+/* Review Avatar */
+.view-revies-slider .field--name-field-review-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Review Name */
+.view-revies-slider .field--name-field-review-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2F4898;
+  margin-bottom: 10px;
+}
+
+/* Review Stars */
+.view-revies-slider .field--name-field-review-stars {
+  margin-bottom: 15px;
+}
+
+.view-revies-slider .field--name-field-review-stars span {
+  font-size: 1.5em !important;
+  color: #FFA500 !important;
+}
+
+/* Review Text */
+.view-revies-slider .field--name-field-review-paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  font-style: italic;
+}
+
+/* Reviews Title */
+.view-revies-slider .field--name-field-reviews-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.view-revies-slider .field--name-field-reviews-title p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2F4898;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Slick Navigation for Reviews */
+.view-revies-slider .slick-dots {
+  bottom: -50px;
+}
+
+.view-revies-slider .slick-dots li button:before {
+  color: #2F4898;
+  font-size: 12px;
+}
+
+.view-revies-slider .slick-dots li.slick-active button:before {
+  color: #2F4898;
+  opacity: 1;
+}
+
+.view-revies-slider .slick-prev,
+.view-revies-slider .slick-next {
+  background: rgba(47, 72, 152, 0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
+.view-revies-slider .slick-prev:before,
+.view-revies-slider .slick-next:before {
+  color: #2F4898;
+  font-size: 20px;
+}
+
+.view-revies-slider .slick-prev {
+  left: -50px;
+}
+
+.view-revies-slider .slick-next {
+  right: -50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .view-revies-slider .paragraph--type--review-comment {
+    margin: 0 5px;
+    padding: 20px;
+  }
+  
+  .view-revies-slider .slick-prev {
+    left: -30px;
+  }
+  
+  .view-revies-slider .slick-next {
+    right: -30px;
+  }
+  
+  .view-revies-slider .field--name-field-reviews-title p {
+    font-size: 2rem;
+  }
+}
+
+/* Force remove unslick behavior */
+.view-revies-slider .unslick {
+  display: block !important;
+}
+
+.view-revies-slider .unslick .slick__slide {
+  display: none;
+}
+
+.view-revies-slider .unslick .slick__slide:first-child {
+  display: block;
+}
+
+/* Show all slides when JavaScript loads */
+.view-revies-slider.slick-initialized .slick__slide {
+  display: block;
+}
+
+/*# sourceMappingURL=reviews-slider.css.map */

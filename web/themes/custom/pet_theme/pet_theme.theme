@@ -1,0 +1,130 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the pet_theme theme.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function pet_theme_page_attachments(array &$attachments) {
+  // Attach our global styling library to every page
+  $attachments['#attached']['library'][] = 'pet_theme/global-styling';
+}
+
+/**
+ * Implements template_preprocess_views_view_unformatted().
+ */
+function pet_theme_preprocess_views_view_unformatted(&$variables) {
+  if ($variables['view']->id() == 'pet_card_view' && $variables['view']->current_display == 'block_1') {
+    foreach ($variables['rows'] as $index => $row) {
+      $row_number = $index + 1;
+      $position = ($index % 2 == 0) ? 'odd' : 'even';
+      
+      // Add custom classes
+      $custom_classes = [
+        'pet-card-' . $row_number,
+        'pet-card-position-' . $position,
+      ];
+      
+      if ($index == 0) {
+        $custom_classes[] = 'pet-card-featured';
+      }
+      
+      $variables['rows'][$index]['attributes']->addClass($custom_classes);
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function pet_theme_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Handle Views exposed filters specifically
+  if (strpos($form_id, 'views_exposed_form') === 0) {
+    
+    // Hide apply button but keep functionality
+    if (isset($form['actions']['submit'])) {
+      $form['actions']['submit']['#attributes']['style'] = 'display: none;';
+      $form['actions']['submit']['#attributes']['class'][] = 'visually-hidden';
+    }
+    
+    // Handle city fields in exposed filters
+    foreach ($form as $key => &$element) {
+      if (is_array($element) && strpos($key, 'city') !== FALSE) {
+        if (isset($element['#type']) && $element['#type'] == 'select') {
+          // Set default to 'All' or empty
+          $element['#default_value'] = 'All';
+          // Add custom empty option
+          if (isset($element['#options'])) {
+            $element['#options'] = ['All' => t('Choose city')] + $element['#options'];
+            // Remove Київ as default if it exists
+            if (isset($element['#options']['Київ'])) {
+              unset($element['#default_value']);
+              $element['#default_value'] = 'All';
+            }
+          }
+        }
+      }
+      
+      // Handle oblast/region fields in exposed filters
+      if (is_array($element) && (strpos($key, 'oblast') !== FALSE || strpos($key, 'region') !== FALSE)) {
+        if (isset($element['#type']) && $element['#type'] == 'select') {
+          // Set default to 'All' or empty
+          $element['#default_value'] = 'All';
+          // Add custom empty option
+          if (isset($element['#options'])) {
+            $element['#options'] = ['All' => t('Any')] + $element['#options'];
+            // Remove Київська Область as default if it exists
+            if (isset($element['#options']['Київська Область'])) {
+              unset($element['#default_value']);
+              $element['#default_value'] = 'All';
+            }
+          }
+        }
+      }
+    }
+    
+    // Add classes for styling and JavaScript targeting
+    $form['#attributes']['class'][] = 'auto-submit-form';
+    $form['#attributes']['class'][] = 'hide-apply-button';
+  }
+  
+  // Handle regular node/entity forms
+  if (isset($form['field_city_select'])) {
+    $form['field_city_select']['widget']['#default_value'] = '';
+    $form['field_city_select']['widget']['#empty_option'] = t('Choose city');
+  }
+  
+  if (isset($form['field_select_oblast'])) {
+    $form['field_select_oblast']['widget']['#default_value'] = '';
+    $form['field_select_oblast']['widget']['#empty_option'] = t('Any');
+  }
+}
+
+/**
+ * Implements hook_field_widget_single_element_form_alter().
+ */
+function pet_theme_field_widget_single_element_form_alter(&$element, \Drupal\Core\Form\FormStateInterface $form_state, $context) {
+  $field_definition = $context['items']->getFieldDefinition();
+  $field_name = $field_definition->getName();
+  
+  // Handle city select fields
+  if (in_array($field_name, ['field_city_select', 'field_city'])) {
+    if (isset($element['#type']) && $element['#type'] == 'select') {
+      $element['#empty_option'] = t('Choose city');
+      $element['#empty_value'] = '';
+      $element['#default_value'] = '';
+    }
+  }
+  
+  // Handle oblast/region select fields
+  if (in_array($field_name, ['field_select_oblast', 'field_region'])) {
+    if (isset($element['#type']) && $element['#type'] == 'select') {
+      $element['#empty_option'] = t('Any');
+      $element['#empty_value'] = '';
+      $element['#default_value'] = '';
+    }
+  }
+}

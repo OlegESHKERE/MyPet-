@@ -1,0 +1,16 @@
+{# Create alternating classes based on node ID #}
+{% set article_class = (node.id % 2 == 0) ? 'blog-article-even' : 'blog-article-odd' %}
+
+<div class="blog-page {{ article_class }}">
+    <div class="blog-title">
+        <h2>{{ node.label }}</h2>
+    </div>
+    
+    <div class="blog-content">
+        {{ content.body }}
+    </div>
+    
+    <div class="blog-image">
+        {{ content.field_content_picture }}
+    </div>
+</div>

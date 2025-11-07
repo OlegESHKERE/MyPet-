@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/header.css"],"names":[],"mappings":"AAAA,kBAAkB;AAClB;EACE,gBAAgB;EAChB,eAAe;EACf,MAAM;AACR","file":"header.css","sourcesContent":["/* header /* CSS */\r\n.site-header__fixable {\r\n  transition: none;\r\n  transform: none;\r\n  top: 0;\r\n}"]}

@@ -1,0 +1,271 @@
+/**
+ * @file
+ * CSS for Vet Clinic Map module.
+ */
+
+/* ==========================================================================
+   Vet Clinic Finder Form
+   ========================================================================== */
+
+.vet-clinic-finder-form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.vet-clinic-finder-form .form-item {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  vertical-align: top;
+}
+
+.vet-clinic-finder-form .form-item label {
+  font-weight: 600;
+  color: #2F4898;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.vet-clinic-finder-form select {
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 14px;
+  min-width: 200px;
+  transition: border-color 0.3s ease;
+}
+
+.vet-clinic-finder-form select:focus {
+  border-color: #2F4898;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(47, 72, 152, 0.2);
+}
+
+.find-clinics-btn {
+  background: #2F4898;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-left: 10px;
+}
+
+.find-clinics-btn:hover {
+  background: #1e3261;
+}
+
+/* ==========================================================================
+   Map Container
+   ========================================================================== */
+
+#vet-clinic-map {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Clinics List
+   ========================================================================== */
+
+.clinics-list-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clinics-list-container h3 {
+  color: #2F4898;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.clinics-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.clinic-item {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 6px;
+  border-left: 4px solid #2F4898;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clinic-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.clinic-item h4 {
+  margin: 0 0 10px 0;
+  color: #2F4898;
+  font-size: 16px;
+}
+
+.clinic-item h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.clinic-item h4 a:hover {
+  text-decoration: underline;
+}
+
+.clinic-item p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.clinic-item .address {
+  color: #333;
+  font-weight: 500;
+}
+
+.clinic-item .phone a,
+.clinic-item .email a {
+  color: #2F4898;
+  text-decoration: none;
+}
+
+.clinic-item .phone a:hover,
+.clinic-item .email a:hover {
+  text-decoration: underline;
+}
+
+.clinic-item .location {
+  color: #888;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   Info Window Styling
+   ========================================================================== */
+
+.clinic-info-window {
+  max-width: 300px;
+}
+
+.clinic-info-window h3 {
+  color: #2F4898;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.clinic-info-window p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.clinic-info-window a {
+  color: #2F4898;
+  text-decoration: none;
+}
+
+.clinic-info-window a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Loading and Error States
+   ========================================================================== */
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-style: italic;
+}
+
+.loading:before {
+  content: "🔄 ";
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.no-results {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+  font-style: italic;
+}
+
+.no-results:before {
+  content: "ℹ️ ";
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #d32f2f;
+  background: #ffebee;
+  border-radius: 4px;
+  border-left: 4px solid #d32f2f;
+}
+
+.error:before {
+  content: "⚠️ ";
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .vet-clinic-finder-form .form-item {
+    display: block;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  .vet-clinic-finder-form select {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .find-clinics-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .clinics-list {
+    grid-template-columns: 1fr;
+  }
+  
+  #vet-clinic-map {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .vet-clinic-finder-form {
+    padding: 15px;
+  }
+  
+  .clinics-list-container {
+    padding: 15px;
+  }
+  
+  .clinic-item {
+    padding: 12px;
+  }
+}

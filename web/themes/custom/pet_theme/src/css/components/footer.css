@@ -1,0 +1,64 @@
+/* footer /* CSS */
+.site-footer {
+  background: #fff;
+  border: unset !important;
+
+  .site-footer__inner {
+    max-width: none;
+    .region--footer-top {
+      display: flex;
+    }
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    vertical-align: middle;
+    color: #2F4898 !important;
+  }
+  li {
+    display: flex;
+    font-family: Almarai;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: -1%;
+    text-align: center;
+    vertical-align: middle;
+    color: #0E2515;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+#block-pet-theme-copyright {
+  max-width: none;
+  display: flex;
+  justify-content: center;
+  color: #DEDEDE;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-top: 1px solid #DEDEDE;
+  a {
+    text-decoration: none;
+  }
+}:hover {
+  color: inherit;
+}
+.field--name-field-logo-image {
+  .field__label {
+    display: none;
+  }
+  img {
+    width: 46px;
+    height: 40px;
+    top: 6.75px;
+    left: 3.31px;
+    opacity: 1;
+  }
+}
+#block-pet-theme-logoimagefooter {
+  max-width: 200px;
+  margin: 0 0 0 calc(7%);
+}

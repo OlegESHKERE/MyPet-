@@ -1,0 +1,10 @@
+name: 'Vet Clinic Map'
+type: module
+description: 'Provides a region/city selector with Google Maps integration to display vet clinics.'
+core_version_requirement: ^9 || ^10
+package: 'Pet Platform'
+dependencies:
+  - drupal:system
+  - drupal:field
+  - drupal:node
+  - drupal:views

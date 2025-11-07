@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/ask-ai-block.css"],"names":[],"mappings":"AAAA,wBAAwB;AACxB;AACA;IACI,aAAa;AACjB;AACA;IACI,gBAAgB;AACpB;AACA","file":"ask-ai-block.css","sourcesContent":["/* ask ai block /* CSS */\r\n#block-pet-theme-askai {\r\n.field--type-entity-reference {\r\n    display: none;\r\n}\r\na:hover {\r\n    box-shadow: none;\r\n}\r\n}"]}

@@ -1,0 +1,46 @@
+/* TailwindCSS temporarily disabled due to Node.js v10 compatibility */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* Component Imports */
+@import 'components/ai-chat.css';
+@import 'components/header.css';
+@import 'components/top-menu-bar.css';
+@import 'components/banner.css';
+@import 'components/icons-header.css';
+@import 'components/statistics-block.css';
+@import 'components/ask-ai-block.css';
+@import 'components/question-block.css';
+@import 'components/footer.css';
+@import 'components/server-codes-style.css';
+@import 'components/view-blog-block.css';
+@import 'components/register-info-block.css';
+@import 'components/pet-cards.css';
+@import 'components/blog.css';
+@import 'components/reviews-slider.css';
+@import 'layout/rating-page.css';
+@import 'layout/blog-page-view.css';
+@import 'components/about-us-page.css';
+
+/* Layout Imports */
+@import 'layout/page-layout.css';
+
+/* Responsive Styles */
+@import 'components/responsive-adjustments.css';
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+

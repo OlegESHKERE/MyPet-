@@ -1,0 +1,46 @@
+/* top mnu bar /* CSS */
+.site-header__inner__container {
+  max-width: none;
+}
+nav#block-pet-theme-account-menu {
+  position: absolute;
+  left: auto;
+  right: 60px;
+  top: 36px;
+}::before {
+  display: none;
+}
+#block-pet-theme-main-menu {
+  font-weight: 700;
+  font-size: bold;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: -1%;
+  text-align: center;
+  vertical-align: middle;
+} :hover {
+  color: #2F4898;
+}
+#block-pet-theme-main-menu li {
+  margin-right: 40px;
+}
+#block-pet-theme-main-menu span {
+  padding-top: 47px;
+  padding-bottom: 47px;
+}
+#block-pet-theme-account-menu li {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 10px;
+  padding-top: 6px;
+  padding-right: 36px;
+  padding-bottom: 6px;
+  padding-left: 36px;
+  border-width: 1px;
+  border: 1px solid #2F4898
+}
+
+/*# sourceMappingURL=top-menu-bar.css.map */

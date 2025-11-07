@@ -1,0 +1,42 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      src/css/style.css: {}
+      css/blog-header.css: {}
+  js:
+    dist/js/script.js: {}
+    js/select-text-replacer.js: {}
+    js/city-oblast-defaults.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+slick:
+  version: 1.8.1
+  css:
+    theme:
+      src/css/vendor/slick.css: {}
+      src/css/vendor/slick-theme.css: {}
+  js:
+    js/vendor/slick.min.js: {}
+  dependencies:
+    - core/jquery
+
+slick-init:
+  version: 1.x
+  js:
+    js/slick-init.js: {}
+  dependencies:
+    - pet_theme/slick
+    - core/drupal
+
+reviews-slider-fix:
+  version: 1.x
+  js:
+    js/reviews-slider-fix.js: {}
+  dependencies:
+    - pet_theme/slick
+    - core/drupal
+    - core/jquery

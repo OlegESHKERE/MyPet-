@@ -1,0 +1,324 @@
+.block-views-blockclinic-maps-view-block-1 {
+    .block__title {
+        font-family: Almarai;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        leading-trim: NONE;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #000000;
+        display: flex;
+        justify-content: center;
+        margin-bottom: calc(10%);
+    }
+    #edit-actions {
+        display: none;
+    }
+    select {
+        width: 190px;
+        height: 44px;
+        top: 133px;
+        left: 238px;
+        border-radius: 8px;
+        opacity: 1;
+        background: #2F4898;
+        color: white;
+        padding: 8px 40px 8px 12px;
+        border: none;
+        outline: none;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        cursor: pointer;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTEiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNOSAxMEwxMiAxM0wxNSAxMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+');
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 20px 20px;
+    }
+    
+    /* Custom placeholder styling */
+    &::after {
+        content: "Choose City";
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, 0.8);
+        pointer-events: none;
+        display: none;
+    }
+    
+    /* Show placeholder when "All" is selected */
+    &[data-placeholder="true"]::after {
+        display: block;
+    }
+    .node__title {
+        display: none;
+    }
+    .node__meta {
+          display: none;
+    }
+    iframe {
+        border-radius: 14px;
+        width: 100%;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+    
+    /* Map container styling to match the design */
+    .field--name-field-map,
+    .field--name-field-clinic-map {
+        position: relative;
+        background: #f8f9fa;
+        border-radius: 14px;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    /* Custom map styling filters */
+    iframe[src*="google.com/maps"],
+    iframe[src*="openstreetmap.org"] {
+        filter: hue-rotate(210deg) saturate(0.6) brightness(1);
+    }
+    
+    /* Size indicator styling to match your image */
+    .map-size-indicator {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(59, 153, 255, 0.9);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 10;
+    }
+    
+    /* Blue location pin SVG marker */
+    .field--name-field-map::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 32px;
+        height: 40px;
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCAzMiA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDRDMTAuNDc3IDQgNiA4LjQ3NyA2IDE0QzYgMjIgMTYgMzQgMTYgMzRDMTYgMzQgMjYgMjIgMjYgMTRDMjYgOC40NzcgMjEuNTIzIDQgMTYgNFoiIGZpbGw9IiMyRjQ4OTgiLz4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNCIgcj0iNSIgZmlsbD0id2hpdGUiLz4KPC9zdmc+');
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 5;
+        pointer-events: none;
+        filter: drop-shadow(0 2px 6px rgba(47, 72, 152, 0.4));
+    }
+    
+    /* Remove the old after pseudo-element since SVG includes the white center */
+    .field--name-field-map::after {
+        display: none;
+    }
+    
+    /* Additional location markers for multiple pins */
+    .location-marker {
+        position: absolute;
+        width: 32px;
+        height: 40px;
+        background-image: url('../../../images/location-pin.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 5;
+        pointer-events: none;
+        filter: drop-shadow(0 2px 6px rgba(47, 72, 152, 0.4));
+    }
+    
+    /* Different colored variants */
+    .location-marker--red {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCAzMiA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDRDMTAuNDc3IDQgNiA4LjQ3NyA2IDE0QzYgMjIgMTYgMzQgMTYgMzRDMTYgMzQgMjYgMjIgMjYgMTRDMjYgOC40NzcgMjEuNTIzIDQgMTYgNFoiIGZpbGw9IiNEQzI2MjYiLz4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNCIgcj0iNSIgZmlsbD0id2hpdGUiLz4KPC9zdmc+');
+    }
+    
+    .location-marker--green {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCAzMiA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDRDMTAuNDc3IDQgNiA4LjQ3NyA2IDE0QzYgMjIgMTYgMzQgMTYgMzRDMTYgMzQgMjYgMjIgMjYgMTRDMjYgOC40NzcgMjEuNTIzIDQgMTYgNFoiIGZpbGw9IiMxNkE2MkYiLz4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNCIgcj0iNSIgZmlsbD0id2hpdGUiLz4KPC9zdmc+');
+    }
+    .view-clinic-maps-view  {
+        display: block;
+    }
+}
+.paragraph--type--paragraph-pages {
+    .field--name-field-page-title {
+        display: none
+    }
+    .field__label {
+        display: none;
+    }
+    .field--name-field-clinic-title {
+        font-family: Almarai;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        leading-trim: NONE;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+        color: #000000;
+        display: flex;
+        justify-content: center;
+        margin-bottom: calc(10%);
+    }
+    .field--name-field-clinic-paragraph {
+        font-family: Almarai;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        leading-trim: NONE;
+        line-height: 140%;
+        letter-spacing: 2%;
+        max-width: 540px;
+        max-width: calc(46%);
+    }
+    .field--name-field-clinic-address {
+        font-family: Almarai;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 140%;
+        letter-spacing: 2%;
+        max-width: 540px;
+        max-width: calc(46%);
+        position: absolute;
+        right: calc(5%);
+        bottom: calc(-9%);
+        line-height: calc(160%);
+        
+        img {
+            display: block;
+        }
+        /* Address list styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        
+        li {
+            position: relative;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+
+            
+            /* CSS-only location pin that looks like your SVG */
+            &::before {
+                content: "";
+                position: absolute;
+                left: 2px;
+                top: 3px;
+                width: 16px;
+                height: 16px;
+                background: #2456A5;
+                border-radius: 50% 50% 50% 0;
+                transform: rotate(-45deg);
+                box-shadow: 0 2px 4px rgba(36, 86, 165, 0.3);
+            }
+            
+            /* White center dot */
+            &::after {
+                content: "";
+                position: absolute;
+                left: 7px;
+                top: 6px;
+                width: 6px;
+                height: 6px;
+                background: white;
+                border-radius: 50%;
+                z-index: 1;
+            }
+        }
+    }
+    .paragraph--type--wet-clinic {
+        position: relative;
+    }
+}
+/* specialist block */
+
+.paragraph--type--specialist {
+    background-color: #2F4898;
+    margin-top: calc(15%);
+    padding: 0;
+    width: 106%;
+    margin-left: calc(-3%);
+    margin-right: auto;
+
+.field--name-field-specialist-title {
+    font-family: Almarai;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 35px;
+    leading-trim: NONE;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: calc(3%) 0 0 0;
+}
+.paragraph--type--specialist-card {
+    height: 396px;
+    width: 312px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: calc(8%);
+    border-radius: 11px;
+    margin-bottom: calc(20%);
+    
+    img {
+        width: 264px;
+        height: 264px;
+        top: 189px;
+        left: 588px;
+        angle: 0 deg;
+        opacity: 1;
+        border-radius: 15px;
+        max-width: unset;
+
+    }
+    .field--name-field-specialist-name {
+        font-family: Almarai;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 20px;
+        leading-trim: NONE;
+        line-height: 28px;
+        letter-spacing: -1.2%;
+        color: #2F4898;
+        margin: -10px auto 0 0;
+
+    }
+    .field--name-field-specialist-job-title {
+        font-family: Almarai;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        leading-trim: NONE;
+        line-height: 24px;
+        letter-spacing: 0%;
+        color: #42526B;
+        margin: 8px auto 0 0;
+
+    }
+}
+.field--name-field-specialist-card-reference .field__items {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: calc(80%);
+    justify-content: center;
+    margin: calc(4%) auto;
+    column-gap: calc(10%);
+}
+}
+/* user reviews */

@@ -1,0 +1,5 @@
+/*statictics block /* CSS */
+#block-pet-theme-aboutusstatictics .field--name-field-image{
+    display: flex;
+    justify-content: space-around;
+}

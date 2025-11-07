@@ -1,0 +1,6 @@
+google_maps_api_key: ''
+default_region: 'Київська Область'
+default_city: 'Київ'
+default_zoom: 10
+enable_clustering: true
+max_results: 50

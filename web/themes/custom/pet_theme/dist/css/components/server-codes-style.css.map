@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/server-codes-style.css"],"names":[],"mappings":"AAAA,eAAe;AACf;IACI,aAAa;IACb,uBAAuB;IACvB,iBAAiB;IACjB,oBAAoB;AACxB","file":"server-codes-style.css","sourcesContent":["/* 404 /* CSS */\r\n.field--name-field-error-image {\r\n    display: flex;\r\n    justify-content: center;\r\n    margin-top: 100px;\r\n    margin-bottom: 100px;\r\n}"]}

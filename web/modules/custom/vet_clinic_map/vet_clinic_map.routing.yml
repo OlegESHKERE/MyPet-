@@ -1,0 +1,20 @@
+vet_clinic_map.clinic_finder:
+  path: '/vet-clinics'
+  defaults:
+    _controller: '\Drupal\vet_clinic_map\Controller\VetClinicMapController::clinicFinder'
+    _title: 'Find Vet Clinics'
+  requirements:
+    _permission: 'access content'
+
+vet_clinic_map.ajax_clinics:
+  path: '/vet-clinics/ajax/{region}/{city}'
+  defaults:
+    _controller: '\Drupal\vet_clinic_map\Controller\VetClinicMapController::ajaxClinics'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      region:
+        type: 'string'
+      city:
+        type: 'string'

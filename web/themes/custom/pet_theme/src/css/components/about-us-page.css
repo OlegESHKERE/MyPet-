@@ -1,0 +1,46 @@
+.view-about-us-block {
+
+
+    .node__title {
+        display: flex;
+        justify-content: center;
+        color: blue;
+        font-family: Almarai;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 35px;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-transform: uppercase;
+
+        span {
+            color: blue;
+        }
+
+    }
+
+    /* Hide meta information author */
+    .node__meta {
+        display: none;
+    }
+
+    .field--name-field-image {
+        display: none;
+
+    }
+
+    p {
+        font-family: Almarai;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 38px;
+        letter-spacing: 0%;
+    }
+}
+
+.node--type-article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

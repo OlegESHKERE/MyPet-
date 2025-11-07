@@ -1,0 +1,38 @@
+  /* override basic tailwind styles /* CSS */
+:root {
+ --content-left: unset;
+ --grid-gap-count: unset;
+}
+
+  /* social-bar /* CSS */
+  .social-bar, .site-header__initial {
+    display: none!important;
+  }
+
+  /* page wrapper /* CSS */
+  .region--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  div#page-wrapper {
+    max-width: none;
+  }
+  #block-pet-theme-logoblock .field--name-field-media-image { 
+    width: 70px;
+    height: 70px;
+    margin-right: 53px;
+    padding-top: 2px;
+
+  }
+  .main-content {
+    max-width: none;
+    margin-right: 5px;
+  }
+  .main-content__container {
+    max-width: none;
+  }
+  .layout-main {
+    display: block;
+  }
+/*# sourceMappingURL=page-layout.css.map */

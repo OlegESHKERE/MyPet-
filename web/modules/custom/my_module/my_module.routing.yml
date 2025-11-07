@@ -1,0 +1,7 @@
+my_module.form:
+  path: '/my-module/form'
+  defaults:
+    _form: '\Drupal\my_module\Form\MyExampleForm'
+    _title: 'Приклад форми'
+  requirements:
+    _permission: 'access content'

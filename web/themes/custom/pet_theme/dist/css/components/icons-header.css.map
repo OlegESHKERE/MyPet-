@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/icons-header.css"],"names":[],"mappings":"AAAA,8BAA8B;AAC9B;IACI,cAAc;IACd,mBAAmB;IACnB,mBAAmB;IACnB,kBAAkB;AACtB","file":"icons-header.css","sourcesContent":["/* icons header block /* CSS */\r\n.icons-banner {\r\n    color: #000000;\r\n    border-radius: 12px;\r\n    padding: 28px 106px;\r\n    margin-top: -160px;\r\n}"]}

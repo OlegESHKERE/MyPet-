@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Template for the vet clinic finder page.
+ *
+ * Available variables:
+ * - form: The clinic finder form.
+ * - map_container: The Google Maps container.
+ * - clinics_list: The clinics list container.
+ */
+#}
+
+<div class="vet-clinic-finder-page">
+  <div class="vet-clinic-finder-header">
+    <h1>{{ 'Find Vet Clinics Near You'|t }}</h1>
+    <p>{{ 'Select your region and city to find veterinary clinics in your area.'|t }}</p>
+  </div>
+
+  <div class="vet-clinic-finder-form-wrapper">
+    {{ form }}
+  </div>
+
+  <div class="vet-clinic-map-container">
+    <div class="map-wrapper">
+      {{ map_container }}
+    </div>
+  </div>
+
+  <div class="clinics-results">
+    {{ clinics_list }}
+  </div>
+</div>

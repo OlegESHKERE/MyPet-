@@ -1,0 +1,7 @@
+name: 'My Module'
+type: module
+description: 'Приклад модуля з ООП, DI, контролерами, формами, подіями та сервісами.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:system

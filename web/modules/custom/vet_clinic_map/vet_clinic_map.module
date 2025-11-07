@@ -1,0 +1,73 @@
+<?php
+
+/**
+ * @file
+ * Contains vet_clinic_map.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function vet_clinic_map_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.vet_clinic_map':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Vet Clinic Map module provides a region and city selector with Google Maps integration to help users find veterinary clinics in their area.') . '</p>';
+      $output .= '<h3>' . t('Features') . '</h3>';
+      $output .= '<ul>';
+      $output .= '<li>' . t('Interactive form with region and city selection') . '</li>';
+      $output .= '<li>' . t('Google Maps integration with custom clinic markers') . '</li>';
+      $output .= '<li>' . t('AJAX-powered search results') . '</li>';
+      $output .= '<li>' . t('Responsive design for mobile devices') . '</li>';
+      $output .= '</ul>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function vet_clinic_map_theme() {
+  return [
+    'vet_clinic_finder' => [
+      'variables' => [
+        'form' => NULL,
+        'map_container' => NULL,
+        'clinics_list' => NULL,
+      ],
+      'template' => 'vet-clinic-finder',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function vet_clinic_map_page_attachments(array &$attachments) {
+  $route_match = \Drupal::routeMatch();
+  
+  // Only attach Google Maps API on our clinic finder page
+  if ($route_match->getRouteName() == 'vet_clinic_map.clinic_finder') {
+    $config = \Drupal::config('vet_clinic_map.settings');
+    $api_key = $config->get('google_maps_api_key');
+    
+    if ($api_key) {
+      $attachments['#attached']['html_head'][] = [
+        [
+          '#tag' => 'script',
+          '#attributes' => [
+            'src' => 'https://maps.googleapis.com/maps/api/js?key=' . $api_key . '&callback=initMap&libraries=places',
+            'async' => TRUE,
+            'defer' => TRUE,
+          ],
+        ],
+        'google_maps_api'
+      ];
+    }
+  }
+}

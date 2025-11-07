@@ -1,0 +1,6 @@
+/* header /* CSS */
+.site-header__fixable {
+  transition: none;
+  transform: none;
+  top: 0;
+}

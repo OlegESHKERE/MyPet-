@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the Slick carousel template.
+ *
+ * Available variables:
+ * - items: The array of items containing main image/video/audio, optional image/video/audio overlay and captions, and link.
+ * - settings: A cherry-picked settings that mostly defines the slide layouts.
+ * - attributes: The array of attributes to hold the main container classes, id.
+ * - content_attributes: The array of attributes to hold optional RTL, and other layout classes for .slick__slide.
+ */
+#}
+
+{# Ensure Slick libraries are attached #}
+{{ attach_library('slick/slick') }}
+{{ attach_library('pet_theme/slick') }}
+
+{%
+  set classes = [
+    'slick',
+    settings.skin ? 'slick--skin--' ~ settings.skin|clean_class,
+    'slick--optionset--' ~ settings.optionset|clean_class,
+    settings.style and settings.style != 'default' ? 'slick--' ~ settings.style|clean_class,
+    settings.display ? 'slick--' ~ settings.display|clean_class,
+    settings.unslick ? 'unslick',
+    settings.vertical ? 'slick--vertical',
+    arrow_down_attributes is defined ? 'slick--has-arrow-down',
+    settings.skin_arrows ? 'slick--' ~ settings.skin_arrows|clean_class,
+    settings.skin_dots ? 'slick--' ~ settings.skin_dots|clean_class,
+    settings.content_attributes.class ? settings.content_attributes.class
+  ]
+%}
+
+{# Remove unslick class to ensure proper initialization #}
+{% set classes = classes|filter(v => v != 'unslick') %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if not settings.unslick %}
+    {% for item in items %}
+      <div{{ content_attributes.addClass('slick__slide', 'slide', 'slide--' ~ loop.index0) }}>
+        {{ item }}
+      </div>
+    {% endfor %}
+  {% else %}
+    {% for item in items %}
+      {{ item }}
+    {% endfor %}
+  {% endif %}
+</div>
+
+{# Add custom initialization script #}
+<script>
+(function($, Drupal, once) {
+  'use strict';
+  
+  Drupal.behaviors.slickCustomInit = {
+    attach: function(context, settings) {
+      $('.slick:not(.slick-initialized)', context).once('slick-custom').each(function() {
+        var $slider = $(this);
+        
+        // Initialize Slick with custom settings
+        $slider.slick({
+          dots: true,
+          infinite: true,
+          speed: 500,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          arrows: true,
+          fade: true,
+          cssEase: 'ease-in-out',
+          prevArrow: '<button type="button" class="slick-prev" aria-label="Previous">❮</button>',
+          nextArrow: '<button type="button" class="slick-next" aria-label="Next">❯</button>'
+        });
+      });
+    }
+  };
+})(jQuery, Drupal, once);
+</script>

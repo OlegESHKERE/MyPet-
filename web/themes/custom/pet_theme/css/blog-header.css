@@ -1,0 +1,110 @@
+/* ==========================================================================
+   Blog Header Styles
+   ========================================================================== */
+
+/* Blog title styling */
+.blog-title {
+    font-family: Almarai, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #2F4898;
+}
+
+/* ==========================================================================
+   Exposed Filters Auto-Submit Styling
+   ========================================================================== */
+
+/* Hide apply buttons in exposed forms */
+.views-exposed-form.hide-apply-button input[type="submit"],
+.views-exposed-form.hide-apply-button .form-submit,
+.auto-submit-form input[type="submit"],
+.auto-submit-form .form-submit {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* ==========================================================================
+   Blog Header Styles (Continued)
+   ========================================================================== */
+
+/* Blog header container */
+.blog-header h1 {
+    font-family: Almarai, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0 0 80px 0;
+    color: #333;
+}
+
+/* Blog page view container */
+.blog-page-view {
+    margin: 20px 0;
+}
+
+/* Blog articles list layout */
+.blog-articles-list {
+    margin: 0 auto;
+    padding: 0 calc(3%);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+}
+
+/* Blog content text styling */
+.blog-content p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 38px;
+    padding-bottom: 20px;
+}
+
+/* Blog article odd styling */
+.blog-article-odd {
+    width: 572px;
+}
+
+.blog-article-odd p {
+    max-width: 572px;
+}
+
+.blog-article-odd img {
+    width: 571px;
+    height: 376px;
+    opacity: 1;
+    border-radius: 20px;
+}
+
+/* Blog article even styling */
+.blog-article-even {
+    width: 646px;
+}
+
+.blog-article-even p {
+    max-width: 646px;
+}
+
+.blog-article-even img {
+    width: 648px;
+    height: 530px;
+    opacity: 1;
+    border-radius: 20px;
+}
+
+/* Blog title styling */
+.blog-title h2{
+    font-family: Almarai, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #2F4898;
+}

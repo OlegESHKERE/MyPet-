@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Template for Blog Page View
+ * Available variables:
+ * - view: The view object.
+ * - rows: The raw row data.
+ */
+#}
+
+<div class="blog-page-view">
+    {# Page header - only appears once at the top #}
+    <div class="blog-header">
+        <h1>БЛОГ</h1>
+    </div>
+    
+    {# View content with all blog articles #}
+    <div class="blog-articles-list">
+        {{ rows }}
+    </div>
+    
+    {# Pager if exists #}
+    {% if pager %}
+        {{ pager }}
+    {% endif %}
+</div>

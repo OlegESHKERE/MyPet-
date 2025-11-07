@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the vet_clinic_map module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function vet_clinic_map_install() {
+  \Drupal::messenger()->addMessage(t('Vet Clinic Map module has been installed successfully. Don\'t forget to configure your Google Maps API key in the module settings.'));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function vet_clinic_map_uninstall() {
+  // Clean up any configuration
+  \Drupal::configFactory()->getEditable('vet_clinic_map.settings')->delete();
+}
+
+/**
+ * Implements hook_requirements().
+ */
+function vet_clinic_map_requirements($phase) {
+  $requirements = [];
+
+  if ($phase == 'install' || $phase == 'runtime') {
+    $config = \Drupal::config('vet_clinic_map.settings');
+    $api_key = $config->get('google_maps_api_key');
+
+    $requirements['vet_clinic_map_api_key'] = [
+      'title' => t('Google Maps API Key'),
+      'description' => t('A Google Maps API key is required for the Vet Clinic Map module to function properly.'),
+    ];
+
+    if (empty($api_key)) {
+      $requirements['vet_clinic_map_api_key']['value'] = t('Not configured');
+      $requirements['vet_clinic_map_api_key']['severity'] = REQUIREMENT_WARNING;
+      $requirements['vet_clinic_map_api_key']['description'] .= ' ' . t('Please configure your Google Maps API key in the module settings.');
+    } else {
+      $requirements['vet_clinic_map_api_key']['value'] = t('Configured');
+      $requirements['vet_clinic_map_api_key']['severity'] = REQUIREMENT_OK;
+    }
+  }
+
+  return $requirements;
+}

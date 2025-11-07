@@ -1,0 +1,108 @@
+{#
+/**
+ * @file
+ * Template for Reviews Slider View
+ * Available variables:
+ * - view: The view object.
+ * - rows: The raw row data.
+ */
+#}
+
+{# Attach Slick libraries #}
+{{ attach_library('slick/slick') }}
+{{ attach_library('pet_theme/reviews-slider-fix') }}
+
+{# Reviews slider wrapper #}
+<div class="reviews-slider-wrapper">
+  <div{{ attributes.addClass(classes) }}>
+    {% if title %}
+      {{ title_prefix }}
+      <h3{{ title_attributes }}>{{ title }}</h3>
+      {{ title_suffix }}
+    {% endif %}
+    
+    {% if header %}
+      <header>
+        {{ header }}
+      </header>
+    {% endif %}
+    
+    {% if exposed %}
+      <nav class="exposed-filters">
+        {{ exposed }}
+      </nav>
+    {% endif %}
+    
+    {% if attachment_before %}
+      <div class="attachment attachment-before">
+        {{ attachment_before }}
+      </div>
+    {% endif %}
+    
+    {% if rows -%}
+      <div{{ content_attributes.addClass('view-content') }}>
+        {{ rows }}
+      </div>
+    {% elseif empty -%}
+      {{ empty }}
+    {% endif %}
+    
+    {% if pager %}
+      {{ pager }}
+    {% endif %}
+    
+    {% if attachment_after %}
+      <div class="attachment attachment-after">
+        {{ attachment_after }}
+      </div>
+    {% endif %}
+    
+    {% if more %}
+      {{ more }}
+    {% endif %}
+    
+    {% if footer %}
+      <footer>
+        {{ footer }}
+      </footer>
+    {% endif %}
+    
+    {% if feed_icons %}
+      <div class="feed-icons">
+        {{ feed_icons }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{# Custom JavaScript to reinitialize Slick #}
+<script>
+(function($, Drupal) {
+  'use strict';
+  
+  Drupal.behaviors.reviewsSliderFix = {
+    attach: function(context, settings) {
+      // Remove unslick class and reinitialize
+      $('.unslick', context).each(function() {
+        $(this).removeClass('unslick');
+        
+        // Reinitialize Slick if not already done
+        if (!$(this).hasClass('slick-initialized')) {
+          $(this).slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            arrows: true,
+            fade: true,
+            cssEase: 'ease-in-out'
+          });
+        }
+      });
+    }
+  };
+})(jQuery, Drupal);
+</script>
