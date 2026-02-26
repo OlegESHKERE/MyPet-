@@ -1,0 +1,9 @@
+name: Social Interaction
+type: module
+description: Provides social features for pet owners to interact, share experiences.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:comment
+  - drupal:node
+  - drupal:user

@@ -1,0 +1,7 @@
+name: User Multistep Registration
+type: module
+description: Provides multistep user registration.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:user

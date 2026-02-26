@@ -1,22 +1,41 @@
-# Composer-enabled Drupal template
+# My Pet Web Platform
 
-This is Pantheon's recommended starting point for forking new [Drupal](https://www.drupal.org/) upstreams
-that work with the Platform's Integrated Composer build process. It is also the
-Platform's standard Drupal 9 upstream.
+This is a Drupal-based web platform for pet owners, providing comprehensive tools for managing pet health, diet, and community interaction.
 
-Unlike with earlier Pantheon upstreams, files such as Drupal Core that you are
-unlikely to adjust while building sites are not in the main branch of the 
-repository. Instead, they are referenced as dependencies that are installed by
-Composer.
+## Features
 
-For more information and detailed installation guides, please visit the
-Integrated Composer Pantheon documentation: https://pantheon.io/docs/integrated-composer
+- **Pet Profiles**: Create and manage detailed profiles for pets.
+- **Health Diary**: Track daily health activities, medications, and notes.
+- **Diet Planner**: Personalized diet plans with reminder notifications.
+- **Pet Calculator**: Recommendations for diet and health diagnosis.
+- **Veterinary Support**: 24/7 support form for vet consultations.
+- **Social Interaction**: Community forum for sharing experiences.
+- **Ratings & Reviews**: Rate and review pet feeds and vet clinics.
+- **Multistep Registration**: User-friendly registration process.
+- **REST API**: Export pet data in JSON/CSV formats.
+- **External Integrations**: Connect with external APIs for feed ratings.
+
+## Installation
+
+1. Clone the repository.
+2. Run `composer install`.
+3. Enable modules: `drush en pet_profiles health_diary diet_planner pet_calculator veterinary_support social_interaction ratings_reviews user_multistep_registration pet_user_profile pet_api -y`
+4. Configure permissions and create content.
+
+## Usage
+
+- Access calculator at `/pet-calculator`
+- Vet support at `/veterinary-support`
+- Register at `/user/register/multistep`
+
+## API Endpoints
+
+- GET `/api/pets`: Retrieve pet data.
+
+## Security
+
+Data is stored securely with Drupal's encryption. User authentication required for sensitive operations.
 
 ## Contributing
 
-Contributions are welcome in the form of GitHub pull requests. However, the
-`pantheon-upstreams/drupal-composer-managed` repository is a mirror that does not
-directly accept pull requests.
-
-Instead, to propose a change, please fork [pantheon-systems/drupal-composer-managed](https://github.com/pantheon-systems/drupal-composer-managed)
-and submit a PR to that repository.
+Follow Drupal contribution guidelines.

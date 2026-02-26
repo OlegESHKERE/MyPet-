@@ -1,0 +1,5 @@
+name: Pet Calculator
+type: module
+description: Provides a calculator for pet eating recommendations and health diagnosis.
+core_version_requirement: ^9 || ^10
+package: Custom

@@ -1,0 +1,10 @@
+calculator:
+  version: 1.x
+  css:
+    theme:
+      css/calculator.css: {}
+  js:
+    js/calculator.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

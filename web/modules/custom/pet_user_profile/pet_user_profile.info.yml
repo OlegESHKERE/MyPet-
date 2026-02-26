@@ -1,0 +1,8 @@
+name: Pet User Profile
+type: module
+description: Adds pet-related fields to user profiles.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:user
+  - drupal:field

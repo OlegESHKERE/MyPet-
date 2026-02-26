@@ -1,0 +1,81 @@
+<?php
+
+function ratings_reviews_install() {
+  // Create feed content type.
+  $feed_type = \Drupal\node\Entity\NodeType::create([
+    'type' => 'feed',
+    'name' => 'Pet Feed',
+    'description' => 'Information about pet feeds.',
+  ]);
+  $feed_type->save();
+
+  // Vet clinic
+  $vet_type = \Drupal\node\Entity\NodeType::create([
+    'type' => 'vet_clinic',
+    'name' => 'Vet Clinic',
+    'description' => 'Information about vet clinics.',
+  ]);
+  $vet_type->save();
+
+  // Add rating field (use votingapi or simple field).
+  // For simplicity, add a select field for rating.
+  $field_storage_rating = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_rating',
+    'entity_type' => 'node',
+    'type' => 'list_integer',
+    'settings' => [
+      'allowed_values' => [
+        1 => '1',
+        2 => '2',
+        3 => '3',
+        4 => '4',
+        5 => '5',
+      ],
+    ],
+  ]);
+  $field_storage_rating->save();
+
+  $field_rating_feed = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_rating',
+    'entity_type' => 'node',
+    'bundle' => 'feed',
+    'label' => 'Rating',
+  ]);
+  $field_rating_feed->save();
+
+  $field_rating_vet = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_rating',
+    'entity_type' => 'node',
+    'bundle' => 'vet_clinic',
+    'label' => 'Rating',
+  ]);
+  $field_rating_vet->save();
+
+  // Add average rating field.
+  $field_storage_avg = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_average_rating',
+    'entity_type' => 'node',
+    'type' => 'decimal',
+    'settings' => [
+      'precision' => 3,
+      'scale' => 2,
+    ],
+  ]);
+  $field_storage_avg->save();
+
+  $field_avg_feed = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_average_rating',
+    'entity_type' => 'node',
+    'bundle' => 'feed',
+    'label' => 'Average Rating',
+  ]);
+  $field_avg_feed->save();
+
+  $field_avg_vet = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_average_rating',
+    'entity_type' => 'node',
+    'bundle' => 'vet_clinic',
+    'label' => 'Average Rating',
+  ]);
+  $field_avg_vet->save();
+}

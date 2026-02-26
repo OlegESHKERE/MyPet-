@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Install functions for pet_user_profile.
+ */
+
+function pet_user_profile_install() {
+  // Add fields to user entity.
+  $field_storage = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_user_pets',
+    'entity_type' => 'user',
+    'type' => 'entity_reference',
+    'settings' => [
+      'target_type' => 'node',
+      'target_bundle' => 'pet',
+    ],
+  ]);
+  $field_storage->save();
+
+  $field = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_user_pets',
+    'entity_type' => 'user',
+    'bundle' => 'user',
+    'label' => 'Pets',
+  ]);
+  $field->save();
+
+  // Add to user form display.
+  $form_display = \Drupal\Core\Entity\Entity\EntityFormDisplay::load('user.user.default');
+  if ($form_display) {
+    $form_display->setComponent('field_user_pets', [
+      'type' => 'entity_reference_autocomplete',
+    ]);
+    $form_display->save();
+  }
+
+  // Add to view display.
+  $view_display = \Drupal\Core\Entity\Entity\EntityViewDisplay::load('user.user.default');
+  if ($view_display) {
+    $view_display->setComponent('field_user_pets', [
+      'type' => 'entity_reference_label',
+    ]);
+    $view_display->save();
+  }
+}

@@ -1,0 +1,8 @@
+name: Pet Profiles
+type: module
+description: Manages pet profiles and pages.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:user

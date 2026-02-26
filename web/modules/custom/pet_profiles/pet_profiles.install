@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the pet_profiles module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function pet_profiles_install() {
+  // Create the pet content type.
+  $content_type = \Drupal\node\Entity\NodeType::create([
+    'type' => 'pet',
+    'name' => 'Pet',
+    'description' => 'A content type for pet profiles.',
+  ]);
+  $content_type->save();
+
+  // Add fields to the pet content type.
+  $field_storage = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_pet_name',
+    'entity_type' => 'node',
+    'type' => 'string',
+    'settings' => ['max_length' => 255],
+  ]);
+  $field_storage->save();
+
+  $field = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_pet_name',
+    'entity_type' => 'node',
+    'bundle' => 'pet',
+    'label' => 'Pet Name',
+    'required' => TRUE,
+  ]);
+  $field->save();
+
+  // Add more fields: breed, age, etc.
+  // Similar for field_pet_breed, field_pet_age, etc.
+}

@@ -1,0 +1,9 @@
+name: Diet Planner
+type: module
+description: Allows users to create personalized diet plans for their pets with reminders.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:user
+  - pet_profiles:pet_profiles

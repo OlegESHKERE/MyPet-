@@ -1,0 +1,8 @@
+name: Veterinary Support
+type: module
+description: Provides 24/7 veterinary support through chat or contact forms.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:contact
+  - drupal:user

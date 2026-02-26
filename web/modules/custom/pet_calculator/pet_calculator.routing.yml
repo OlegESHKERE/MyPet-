@@ -1,0 +1,7 @@
+pet_calculator.calculator:
+  path: '/pet-calculator'
+  defaults:
+    _controller: '\Drupal\pet_calculator\Controller\PetCalculatorController::calculator'
+    _title: 'Pet Calculator'
+  requirements:
+    _permission: 'access content'

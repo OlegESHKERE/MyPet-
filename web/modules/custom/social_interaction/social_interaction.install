@@ -1,0 +1,15 @@
+<?php
+
+function social_interaction_install() {
+  // Create forum_post content type.
+  $content_type = \Drupal\node\Entity\NodeType::create([
+    'type' => 'forum_post',
+    'name' => 'Forum Post',
+    'description' => 'A post for pet owners to share experiences.',
+  ]);
+  $content_type->save();
+
+  // Enable comments on it.
+  $content_type->setThirdPartySetting('comment', 'comment', 1);
+  $content_type->save();
+}

@@ -1,0 +1,102 @@
+<?php
+
+/**
+ * @file
+ * Install functions for health_diary.
+ */
+
+function health_diary_install() {
+  // Create the health_entry content type.
+  $content_type = \Drupal\node\Entity\NodeType::create([
+    'type' => 'health_entry',
+    'name' => 'Health Entry',
+    'description' => 'A health diary entry for a pet.',
+  ]);
+  $content_type->save();
+
+  // Add fields.
+  $field_storage = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_pet_reference',
+    'entity_type' => 'node',
+    'type' => 'entity_reference',
+    'settings' => [
+      'target_type' => 'node',
+      'target_bundle' => 'pet',
+    ],
+  ]);
+  $field_storage->save();
+
+  $field = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_pet_reference',
+    'entity_type' => 'node',
+    'bundle' => 'health_entry',
+    'label' => 'Pet',
+    'required' => TRUE,
+  ]);
+  $field->save();
+
+  // Date field
+  $field_storage_date = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_entry_date',
+    'entity_type' => 'node',
+    'type' => 'datetime',
+  ]);
+  $field_storage_date->save();
+
+  $field_date = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_entry_date',
+    'entity_type' => 'node',
+    'bundle' => 'health_entry',
+    'label' => 'Date',
+    'required' => TRUE,
+  ]);
+  $field_date->save();
+
+  // Activity field
+  $field_storage_activity = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_activity',
+    'entity_type' => 'node',
+    'type' => 'text_long',
+  ]);
+  $field_storage_activity->save();
+
+  $field_activity = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_activity',
+    'entity_type' => 'node',
+    'bundle' => 'health_entry',
+    'label' => 'Activity',
+  ]);
+  $field_activity->save();
+
+  // Medications
+  $field_storage_med = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_medications',
+    'entity_type' => 'node',
+    'type' => 'text_long',
+  ]);
+  $field_storage_med->save();
+
+  $field_med = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_medications',
+    'entity_type' => 'node',
+    'bundle' => 'health_entry',
+    'label' => 'Medications',
+  ]);
+  $field_med->save();
+
+  // Notes
+  $field_storage_notes = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_notes',
+    'entity_type' => 'node',
+    'type' => 'text_long',
+  ]);
+  $field_storage_notes->save();
+
+  $field_notes = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_notes',
+    'entity_type' => 'node',
+    'bundle' => 'health_entry',
+    'label' => 'Notes',
+  ]);
+  $field_notes->save();
+}

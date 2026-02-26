@@ -1,0 +1,64 @@
+<?php
+
+function diet_planner_install() {
+  // Create diet_plan content type.
+  $content_type = \Drupal\node\Entity\NodeType::create([
+    'type' => 'diet_plan',
+    'name' => 'Diet Plan',
+    'description' => 'A diet plan for a pet.',
+  ]);
+  $content_type->save();
+
+  // Pet reference
+  $field_storage = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_pet_reference',
+    'entity_type' => 'node',
+    'type' => 'entity_reference',
+    'settings' => [
+      'target_type' => 'node',
+      'target_bundle' => 'pet',
+    ],
+  ]);
+  $field_storage->save();
+
+  $field = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_pet_reference',
+    'entity_type' => 'node',
+    'bundle' => 'diet_plan',
+    'label' => 'Pet',
+    'required' => TRUE,
+  ]);
+  $field->save();
+
+  // Diet details
+  $field_storage_diet = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_diet_details',
+    'entity_type' => 'node',
+    'type' => 'text_long',
+  ]);
+  $field_storage_diet->save();
+
+  $field_diet = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_diet_details',
+    'entity_type' => 'node',
+    'bundle' => 'diet_plan',
+    'label' => 'Diet Details',
+  ]);
+  $field_diet->save();
+
+  // Reminders (boolean for email/SMS)
+  $field_storage_reminder = \Drupal\field\Entity\FieldStorageConfig::create([
+    'field_name' => 'field_reminders',
+    'entity_type' => 'node',
+    'type' => 'boolean',
+  ]);
+  $field_storage_reminder->save();
+
+  $field_reminder = \Drupal\field\Entity\FieldConfig::create([
+    'field_name' => 'field_reminders',
+    'entity_type' => 'node',
+    'bundle' => 'diet_plan',
+    'label' => 'Enable Reminders',
+  ]);
+  $field_reminder->save();
+}

@@ -1,0 +1,9 @@
+name: Health Diary
+type: module
+description: Allows users to maintain a health diary for their pets, tracking activities, medications, and notes.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:user
+  - pet_profiles:pet_profiles

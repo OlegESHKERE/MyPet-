@@ -1,0 +1,7 @@
+veterinary_support.contact:
+  path: '/veterinary-support'
+  defaults:
+    _form: '\Drupal\veterinary_support\Form\VetSupportForm'
+    _title: 'Veterinary Support'
+  requirements:
+    _permission: 'access content'

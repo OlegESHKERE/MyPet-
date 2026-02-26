@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Module file for diet_planner.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function diet_planner_cron() {
+  // Send reminders for diet plans.
+  $query = \Drupal::entityQuery('node')
+    ->condition('type', 'diet_plan')
+    ->condition('field_reminders', 1);
+  $nids = $query->execute();
+
+  foreach ($nids as $nid) {
+    $node = \Drupal\node\Entity\Node::load($nid);
+    $owner = $node->getOwner();
+    if ($owner) {
+      // Send email reminder.
+      $mail = \Drupal::service('plugin.manager.mail');
+      $params = [
+        'subject' => 'Diet Reminder for ' . $node->getTitle(),
+        'body' => 'Remember to follow the diet plan for your pet.',
+      ];
+      $mail->mail('diet_planner', 'reminder', $owner->getEmail(), 'en', $params);
+    }
+  }
+}

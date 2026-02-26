@@ -1,0 +1,14 @@
+/* CSS from attached calculator code */
+/* Include the styles for the calculator form, banner, etc. */
+
+:root {
+  --color-text-main: #ffc075;
+  --color-text-subtitle: #333;
+  --color-text--active: #fff;
+  --color-text--inactive: #565656;
+  --color-faded-black-1: #191819;
+  --color-faded-black-2: #101010;
+  --color-purina-red: #ec1a19;
+}
+
+/* Add more CSS as needed from the attached file */

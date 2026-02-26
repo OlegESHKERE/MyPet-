@@ -1,0 +1,4 @@
+services:
+  pet_api.external_api:
+    class: Drupal\pet_api\Service\ExternalApiService
+    arguments: ['@http_client']

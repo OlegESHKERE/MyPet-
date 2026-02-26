@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Module file for ratings_reviews.
+ */
+
+/**
+ * Implements hook_entity_presave().
+ */
+function ratings_reviews_entity_presave(\Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && in_array($entity->bundle(), ['feed', 'vet_clinic'])) {
+    // Calculate average rating.
+    // This is simplified; in real, use votingapi or custom.
+    $ratings = $entity->get('field_rating')->getValue();
+    if ($ratings) {
+      $sum = array_sum(array_column($ratings, 'value'));
+      $count = count($ratings);
+      $average = $count > 0 ? $sum / $count : 0;
+      $entity->set('field_average_rating', $average);
+    }
+  }
+}

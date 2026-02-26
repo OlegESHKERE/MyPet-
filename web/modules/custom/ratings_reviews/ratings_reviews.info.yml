@@ -1,0 +1,9 @@
+name: Ratings and Reviews
+type: module
+description: Allows users to rate and review feeds, vets, and services.
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:user
+  - drupal:comment
