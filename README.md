@@ -1,41 +1,153 @@
-# My Pet Web Platform
+# My Pet 🐾
 
-This is a Drupal-based web platform for pet owners, providing comprehensive tools for managing pet health, diet, and community interaction.
+**My Pet** - сучасна веб-платформа для керування улюбленцями та їхніми потребами.
 
-## Features
+---
 
-- **Pet Profiles**: Create and manage detailed profiles for pets.
-- **Health Diary**: Track daily health activities, medications, and notes.
-- **Diet Planner**: Personalized diet plans with reminder notifications.
-- **Pet Calculator**: Recommendations for diet and health diagnosis.
-- **Veterinary Support**: 24/7 support form for vet consultations.
-- **Social Interaction**: Community forum for sharing experiences.
-- **Ratings & Reviews**: Rate and review pet feeds and vet clinics.
-- **Multistep Registration**: User-friendly registration process.
-- **REST API**: Export pet data in JSON/CSV formats.
-- **External Integrations**: Connect with external APIs for feed ratings.
+## Опис проєкту
 
-## Installation
+**My Pet** - це Drupal-платформа, яка допомагає власникам домашніх тварин організовувати інформацію про улюбленців, слідкувати за подіями, записувати візити до ветеринара, зберігати історію здоров’я, а також знаходити корисні поради та сервіси.  
+Проєкт розроблено для швидкого розгортання на будь-якій сучасній ОС із використанням Docker і DDEV.
 
-1. Clone the repository.
-2. Run `composer install`.
-3. Enable modules: `drush en pet_profiles health_diary diet_planner pet_calculator veterinary_support social_interaction ratings_reviews user_multistep_registration pet_user_profile pet_api -y`
-4. Configure permissions and create content.
+---
 
-## Usage
+## Науковий керівник
 
-- Access calculator at `/pet-calculator`
-- Vet support at `/veterinary-support`
-- Register at `/user/register/multistep`
+**Головатий Роман Русланович**, к.т.н., доцент кафедри інформаційних технологій та систем електронних комунікацій  
+**Виконав:** Іванюк Олег Олегович
 
-## API Endpoints
+---
 
-- GET `/api/pets`: Retrieve pet data.
+## 🚀 Початок роботи
 
-## Security
+### Необхідні програми
 
-Data is stored securely with Drupal's encryption. User authentication required for sensitive operations.
+#### Для Windows:
+- Docker Desktop  
+- Ubuntu 20.04.06 LTS (з Microsoft Store)  
+- Git  
+- DDEV  
 
-## Contributing
+#### Для Linux:
+- Docker  
+- Git  
+- DDEV  
 
-Follow Drupal contribution guidelines.
+---
+
+### Клонування та розгортання проєкту
+
+git clone ssh://codeserver.dev.876c7118-3c3a-4bb2-8536-179e2510dde0@codeserver.dev.876c7118-3c3a-4bb2-8536-179e2510dde0.drush.in:2222/~/repository.git -b master my-pet-web-platform
+
+або, якщо немає доступу до Pantheon:
+git clone git@github.com:OlegESHKERE/MyPet-.git
+cd my-pet-web-platform
+
+---
+
+### Завантаження та підготовка бази даних і файлів
+
+- Завантажте актуальну базу даних та файли з Pantheon або з репозиторію.
+- Розпакуйте архіви:
+
+gunzip database.sql.gz
+tar -xf files.tar
+
+---
+
+### Встановлення залежностей та запуск
+
+ddev composer install
+ddev start
+ddev import-db --file=database.sql.gz
+ddev drush cr
+ddev drush uli
+
+---
+
+## ⚠️ Типові помилки та рішення
+
+- **Порт 80 зайнятий**  
+  Зупиніть Apache:
+sudo apachectl stop
+
+Або змініть порти в DDEV:
+ddev config --router-http-port=8080 --router-https-port=8443
+ddev start
+
+- **Проблеми із сертифікатами**  
+Додайте сертифікати у Docker та WSL (див. інструкції нижче).
+
+- **Помилки при імпорті великої бази**  
+Відкрийте додатковий термінал і періодично очищайте кеш.
+
+---
+
+## 🛠 Технічний стек
+
+- **Backend:** Drupal 10, PHP 8.x, MySQL/MariaDB  
+- **Frontend:** Twig, CSS, JS, Tailwind (опціонально)  
+- **DevOps:** Docker, DDEV, Drush, Composer  
+
+---
+
+## 💡 Додаткові інструменти
+
+- **phpMyAdmin:**  
+Встановлення:
+ddev get ddev/ddev-phpmyadmin && ddev restart
+
+Доступ: http://my-pet-web-platform.ddev.site:8036
+
+- **Adminer:**  
+Встановлення:
+ddev get ddev/ddev-adminer
+ddev adminer
+
+Доступ: http://my-pet-web-platform.ddev.site:9101
+
+- **Xdebug для дебагу:**  
+Встановлення розширення PHP Debug у VSCode, налаштування `.vscode/launch.json` (приклади в інструкції).
+
+---
+
+## 🔐 Як експортувати сертифікати з Windows
+
+1. Відкрийте Панель керування → Керування сертифікатами:  
+ Натисніть `Win + R`, введіть `certmgr.msc` і натисніть Enter.
+
+2. Оберіть потрібне сховище сертифікатів, наприклад:  
+ - Особисті (Personal)  
+ - Довірені кореневі центри сертифікації (Trusted Root Certification Authorities)
+
+3. Знайдіть потрібний сертифікат, клацніть правою кнопкою миші → **Всі завдання → Експорт**.
+
+4. У Майстрі експорту:  
+ - Виберіть формат (рекомендовано Base-64 кодування X.509 (.CER)).  
+ - Вкажіть шлях і назву файлу для збереження.
+
+5. Завершіть майстер і збережіть файл.
+
+---
+
+## 🐾 Основні можливості
+
+- Зручне керування інформацією про улюбленців  
+- Ведення історії здоров’я та подій  
+- Інтеграція з календарями та нагадуваннями  
+- Пошук та додавання ветеринарних клінік, сервісів, порад  
+- Безпечна авторизація та адміністрування  
+
+---
+
+## 📦 Розгортання та підтримка
+
+- Для деплойменту на продакшн використовуйте Pantheon  
+- Для локальної розробки - DDEV  
+- Всі команди для роботи з базою, файлами, кешем та сертифікатами наведені вище  
+
+---
+
+**My Pet** - ваш надійний помічник у світі домашніх тварин! 🐶🐱🐾
+
+---
